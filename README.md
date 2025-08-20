@@ -1,20 +1,45 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Clase1 - Juegos de Consola en C#
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Descripción
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Esta solución contiene la implementación de un juego de consola clásico: **Ahorcado**. El proyecto está desarrollado en C# (.NET 9) y cuenta con pruebas unitarias para validar la lógica principal.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+### Juego Ahorcado
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+- El usuario debe adivinar una palabra oculta, letra por letra.
+- Por cada letra acertada, se revela en todas las posiciones correspondientes.
+- Por cada fallo, se incrementa un contador y se muestra la cantidad de intentos restantes.
+- El usuario tiene hasta 6 fallos permitidos antes de perder la partida.
+- El juego termina cuando se adivina la palabra completa o se alcanzan los fallos máximos.
+
+### Pruebas Unitarias
+
+El proyecto incluye pruebas unitarias para asegurar el correcto funcionamiento de la lógica del juego, verificando casos como la selección de la palabra y el proceso de adivinanza de letras.
+
+---
+
+## Tarea
+
+**Implementar una nueva aplicación de consola para el juego "Adivinar número":**
+
+- El programa debe elegir un número aleatorio entre 1 y 100.
+- El usuario debe intentar adivinar el número.
+- Por cada intento, el juego debe indicar si el usuario está "frío", "tibio", "caliente" o "muy caliente" según la cercanía al número objetivo:
+  - **Frío:** Diferencia mayor a 30.
+  - **Tibio:** Diferencia entre 16 y 30.
+  - **Caliente:** Diferencia entre 6 y 15.
+  - **Muy caliente:** Diferencia de 5 o menos.
+- El juego termina cuando el usuario adivina el número.
+
+## Estructura del proyecto
+
+- `Clase1.Consola`: Aplicación de consola principal.
+- `Clase1.Logica`: Lógica de los juegos.
+- `Clase1.Tests`: Pruebas unitarias.
+
+## Intrucciones
+- Hacer un fork de este repositorio
+- Crear Pull Request contra el repositorio original
+---
+
+¡Buena suerte con la nueva tarea!
