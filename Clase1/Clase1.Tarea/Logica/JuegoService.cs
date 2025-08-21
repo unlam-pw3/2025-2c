@@ -1,44 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Clase1.Tarea.Logica
+﻿namespace Clase1.Tarea.Logica
 {
    public class JuegoService : IJuegoService
    {
-      public int cantidadIntentos { get; set; }
+      private int _cantidadIntentos = 0;
       private readonly int _numeroSecreto;
       private readonly int _rangoMinimo = 1;
       private readonly int _rangoMaximo = 100;
+
+
+      public int CantidadIntentos => _cantidadIntentos;
+     
 
       public JuegoService(int numeroSecreto)
       {
          this._numeroSecreto = numeroSecreto;
       }
 
-      public void IngresarNumero(int numero)
-      {
-         if (!EvaluarRangoPermitido(numero))
-         {
 
-         }
-      }
       public bool EvaluarRangoPermitido(int numero)
       {
          return numero >= _rangoMinimo && numero <= _rangoMaximo;
       }
       public void IncrementarIntentos()
       {
-         this.cantidadIntentos++;
+         _cantidadIntentos++;
       }
 
       public string VerificarNumeroIngresado(int numero)
       {
          if (numero != _numeroSecreto)
          {
-            IncrementarIntentos();
             return DistanciaEntreNumeroIngresadoYNumeroSecreto(numero);
          }
          else

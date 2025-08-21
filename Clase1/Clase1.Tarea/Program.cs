@@ -44,7 +44,7 @@ var resultado = new string(' ', 50);
 do
 {
    Console.WriteLine("Ingresa un numero:");
-   string entrada= Console.ReadLine();
+   string? entrada= Console.ReadLine();
 
    // o iniciar aca el int numeroIngresado;
    if(!int.TryParse(entrada, out int numeroIngresado))
@@ -55,8 +55,9 @@ do
 
    if (juegoService.EvaluarRangoPermitido(numeroIngresado))
    {
+      juegoService.IncrementarIntentos();
       resultado = juegoService.VerificarNumeroIngresado(numeroIngresado);
-      Console.WriteLine(resultado);
+      Console.WriteLine($"Estado: {resultado}\nCantidad de intentos: {juegoService.CantidadIntentos}");
    }
    else
    {
