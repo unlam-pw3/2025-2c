@@ -21,8 +21,23 @@ public class JuegoAdivinarNumeroTest
         JuegoAdivinarNumero juego = new JuegoAdivinarNumero(numeroEsperado);
 
         string acierto = juego.RealizarIntento(numeroIndicado);
+        bool gana = juego.AdivinaElNumero();
 
         Assert.Equal(mensajeEsperado,acierto);
+        Assert.True(gana);
+    }
+
+    [Theory]
+    [InlineData(5, 5)]
+    public void SiElJugadorAciertaGana(int numeroEsperado, int numeroIndicado)
+    {
+        JuegoAdivinarNumero juego = new JuegoAdivinarNumero(numeroEsperado);
+        juego.RealizarIntento(numeroIndicado);
+
+
+        bool gana = juego.AdivinaElNumero();
+
+        Assert.True(gana);
     }
 
 }
