@@ -2,6 +2,10 @@
 {
    public class JuegoService : IJuegoService
    {
+      private const int LIMITE_MUY_CALIENTE = 5;
+      private const int LIMITE_CALIENTE = 15;
+      private const int LIMITE_TIBIO = 30;
+
       private int _cantidadIntentos = 0;
       private readonly int _numeroSecreto;
       private readonly int _rangoMinimo = 1;
@@ -9,7 +13,7 @@
 
 
       public int CantidadIntentos => _cantidadIntentos;
-     
+
 
       public JuegoService(int numeroSecreto)
       {
@@ -39,24 +43,27 @@
 
       }
 
-      public string DistanciaEntreNumeroIngresadoYNumeroSecreto(int numeroIngresado)
+      private string DistanciaEntreNumeroIngresadoYNumeroSecreto(int numeroIngresado)
       {
+
+         //la diferencia siempre va a ser positiva con el valor absoluto
          int diferencia = Math.Abs(_numeroSecreto - numeroIngresado);
-         if (diferencia > 30)
+
+         if (diferencia <= LIMITE_MUY_CALIENTE)
          {
-            return "Frío";
+            return "Muy caliente";
          }
-         else if (diferencia >= 16 && diferencia <= 30)
-         {
-            return "Tibio";
-         }
-         else if (diferencia >= 6 && diferencia <= 15)
+         else if (diferencia <= LIMITE_CALIENTE)
          {
             return "Caliente";
          }
+         else if (diferencia <= LIMITE_TIBIO)
+         {
+            return "Tibio";
+         }
          else
          {
-            return "Muy caliente";
+            return "Frío";
          }
       }
    }
