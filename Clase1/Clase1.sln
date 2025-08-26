@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase1.Consola", "Clase1.Consola\Clase1.Consola.csproj", "{386C542B-D51A-4AC2-8059-BC1CEF80E684}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase1.Logica", "Clase1.Logica\Clase1.Logica.csproj", "{6EAA5AF7-13BF-4D5E-B915-74E07D75FAE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase1.Tests", "Clase1.Tests\Clase1.Tests.csproj", "{0984AD5E-2BDA-47A5-A4EC-DDB4477B49EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioNumOculto.Consola", "EjercicioNumOculto.Consola\EjercicioNumOculto.Consola.csproj", "{9A8277D1-4E59-41D9-96A2-59BF0B513F7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{806156B2-B170-422B-ACE3-E58E45F44D1A} = {806156B2-B170-422B-ACE3-E58E45F44D1A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioNumOculto.Logica", "EjericioNumOculto.Logica\EjercicioNumOculto.Logica.csproj", "{806156B2-B170-422B-ACE3-E58E45F44D1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +34,14 @@ Global
 		{0984AD5E-2BDA-47A5-A4EC-DDB4477B49EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0984AD5E-2BDA-47A5-A4EC-DDB4477B49EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0984AD5E-2BDA-47A5-A4EC-DDB4477B49EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A8277D1-4E59-41D9-96A2-59BF0B513F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8277D1-4E59-41D9-96A2-59BF0B513F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8277D1-4E59-41D9-96A2-59BF0B513F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8277D1-4E59-41D9-96A2-59BF0B513F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806156B2-B170-422B-ACE3-E58E45F44D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806156B2-B170-422B-ACE3-E58E45F44D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806156B2-B170-422B-ACE3-E58E45F44D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806156B2-B170-422B-ACE3-E58E45F44D1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
