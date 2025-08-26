@@ -1,40 +1,35 @@
-﻿using Clase1.Logica;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Clase1.Logica;
 
-//Console.WriteLine("Hello, World!");
+JuegoAdivinarNumero juego = new JuegoAdivinarNumero();
+int numeroAleatorio = juego.IniciarJuego();
+Console.WriteLine("Bienvenido al juego de adivinar un numero!");
 
-//logica para juego ahorcado
-//deberia pedir una palabra y ocultarla con guiones bajos
-//en caso de que el usuario acierte una letra,
-//se debe mostrar la letra en todas las posiciones correspondiente
-//si el usuario falla, se debe mostrarse que ha fallado
-//con un contador de fallos y un dibujo del ahorcado
-//son 6 fallos permitidos
-
-JuegoAhorcado juegoAhorcado = new JuegoAhorcado();
-juegoAhorcado.ElegirPalabra();
-Console.WriteLine("Palabra oculta: " + juegoAhorcado.ObtenerPalabraOculta());
-Console.WriteLine("Tienes " + juegoAhorcado.FallosPermitidos() + " intentos para adivinar la palabra.");
-int fallosPermitidos = juegoAhorcado.FallosPermitidos();
-
-while (juegoAhorcado.ObtenerFallos() < fallosPermitidos && !juegoAhorcado.JuegoTerminado())
+while (juego.JuegoTerminado())
 {
-    Console.Write("Introduce una letra: ");
-    char letra = Console.ReadKey().KeyChar;
+    Console.Write("Ingrese un numero entre 1 y 100: ");
+    string numeros = Console.ReadLine();
+    int numeroIngresado = int.Parse(numeros);
     Console.WriteLine();
 
-    if(juegoAhorcado.AdivinarLetra(letra))
+    int diferencia = juego.CalcularDiferencia(numeroIngresado, numeroAleatorio);
+    if (diferencia >= 0 && diferencia <=100)
     {
-        if(juegoAhorcado.JuegoTerminado())
+        if (diferencia == 0)
         {
-            Console.WriteLine("¡Felicidades! Has adivinado la palabra: " + juegoAhorcado.ObtenerPalabraOculta());
-            return; // Termina el juego si se adivina la palabra
+            Console.WriteLine(juego.ObtenerResultado(diferencia));
+            juego.JuegoTerminado();
+            return;
         }
-
-        Console.WriteLine("¡Correcto! La palabra oculta ahora es: " + juegoAhorcado.ObtenerPalabraOculta());
+        Console.WriteLine(juego.ObtenerResultado(diferencia));
     }
     else
     {
-        Console.WriteLine($"Fallaste! Te quedan {fallosPermitidos - juegoAhorcado.ObtenerFallos()} intentos.");
-        Console.WriteLine("La palabra oculta es: " + juegoAhorcado.ObtenerPalabraOculta());
+        Console.WriteLine(juego.ObtenerResultado(diferencia));
+        
     }
 }
