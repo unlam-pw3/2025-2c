@@ -1,0 +1,58 @@
+- Traer los cambios del repositorio original 
+
+git fetch upstream
+
+- Fusionarlos en mi rama principal (main o la que esté usando):
+
+git checkout main
+git merge upstream/main
+
+- Si aparece el error de “unrelated histories”, puedo usar:
+
+git merge upstream/main --allow-unrelated-histories
+
+______________________
+
+- Para crear las librerias y luego convertirlos en dependencias 
+
+dotnet new classlib -o PracticaClase1.Logica
+
+______________________________
+
+Crea los proyectos (si aún no existen):
+
+dotnet new console -n MiJuego.Consola
+dotnet new classlib -n MiJuego.Logica
+dotnet new mstest -n MiJuego.Tests
+
+___________________
+
+Agrega los proyectos a la solución:
+
+dotnet sln Clase1.sln add MiJuego.Consola/MiJuego.Consola.csproj
+dotnet sln Clase1.sln add MiJuego.Logica/MiJuego.Logica.csproj
+dotnet sln Clase1.sln add MiJuego.Tests/MiJuego.Tests.csproj
+
+___________________
+
+Agrega referencias entre proyectos:
+
+-  La consola debe referenciar la lógica
+
+dotnet add MiJuego.Consola reference MiJuego.Logica
+
+- Los tests deben referenciar la lógica:
+
+dotnet add MiJuego.Tests reference MiJuego.Logica
+
+______________________
+
+- Con esta sintaxis olo tengo la posibilidad de lectura para obtener la secuencia
+
+public List<string> Secuencia => _secuencia;  
+
+___________________
+
+- Para debuggear tuve que modificar el archivo launch.json dentro de vscode
+
+Me pedia utilizar una consola por fuera del debug 
