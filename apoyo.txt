@@ -56,3 +56,12 @@ ___________________
 - Para debuggear tuve que modificar el archivo launch.json dentro de vscode
 
 Me pedia utilizar una consola por fuera del debug 
+
+___________________
+
+- Para testear cree una solucion aparte SOLO para mi practica y añadi todos los archivos que hacen a mi aplicacion consola
+
+cd UbicacionExactaDeLaCarpetaRaiz
+
+dotnet new sln -n PracticaClase1SiomDice
+dotnet sln add PracticaClase1.Console/PracticaClase1.Console.csproj
