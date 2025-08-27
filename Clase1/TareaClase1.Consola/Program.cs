@@ -15,6 +15,7 @@ Console.WriteLine();
 Console.WriteLine("- Ingrese un numero del 1 al 100 y en caso de no ser igual al elejido por el programa le dire que tan cerca esta. :)");
 Console.WriteLine();
 
+
 AdivinarNumero juego = new AdivinarNumero();
 
 while (!juego.JuegoFinalizo())
@@ -28,4 +29,4 @@ while (!juego.JuegoFinalizo())
     Console.WriteLine();
 }
 
-Console.WriteLine("Felicidades! Ha adivinado el numero!");
+Console.WriteLine($"Felicidades! Ha adivinado el numero era {juego.ObtenerNumeroAAdivinar()}!");
