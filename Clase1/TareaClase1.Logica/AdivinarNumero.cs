@@ -20,7 +20,7 @@ namespace TareaClase1.Logica
 
         public Cercania IntentoAdivinarNumero(int intentoDeAdivinarNumero)
         {
-            int diferencia = _numeroAAdivinar- intentoDeAdivinarNumero;
+            int diferencia = Math.Abs(_numeroAAdivinar - intentoDeAdivinarNumero);
 
             if (diferencia == 0) _juegoFinalizo = true;
 

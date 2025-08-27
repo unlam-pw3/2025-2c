@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TareaClase1.Test", "TareaCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TareaClase1.Logica", "TareaClase1.Logica\TareaClase1.Logica.csproj", "{5F3F823C-2832-46F8-8E16-1812E269D2E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TareaClase1.Consola", "TareaClase1.Consola\TareaClase1.Consola.csproj", "{F767C9E2-E03A-4367-9A8D-02353EBE6BD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5F3F823C-2832-46F8-8E16-1812E269D2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3F823C-2832-46F8-8E16-1812E269D2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3F823C-2832-46F8-8E16-1812E269D2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F767C9E2-E03A-4367-9A8D-02353EBE6BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F767C9E2-E03A-4367-9A8D-02353EBE6BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F767C9E2-E03A-4367-9A8D-02353EBE6BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F767C9E2-E03A-4367-9A8D-02353EBE6BD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
