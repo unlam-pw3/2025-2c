@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaClase1.Consola", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaClase1.Logica", "..\PracticaClase1\PracticaClase1.Logica\PracticaClase1.Logica.csproj", "{71CD6739-FA9F-4198-8739-9212F5F84AD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaClase1.Test", "..\PracticaClase1\PracticaClase1.Test\PracticaClase1.Test.csproj", "{1A81B100-8AF6-48B4-AAF4-C682D322B95A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{71CD6739-FA9F-4198-8739-9212F5F84AD1}.Release|x64.Build.0 = Release|Any CPU
 		{71CD6739-FA9F-4198-8739-9212F5F84AD1}.Release|x86.ActiveCfg = Release|Any CPU
 		{71CD6739-FA9F-4198-8739-9212F5F84AD1}.Release|x86.Build.0 = Release|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Debug|x64.Build.0 = Debug|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Debug|x86.Build.0 = Debug|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Release|x64.ActiveCfg = Release|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Release|x64.Build.0 = Release|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Release|x86.ActiveCfg = Release|Any CPU
+		{1A81B100-8AF6-48B4-AAF4-C682D322B95A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
