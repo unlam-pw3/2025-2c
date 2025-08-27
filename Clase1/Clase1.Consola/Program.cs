@@ -10,31 +10,29 @@
 //con un contador de fallos y un dibujo del ahorcado
 //son 6 fallos permitidos
 
-JuegoAhorcado juegoAhorcado = new JuegoAhorcado();
+var juegoAhorcado = new JuegoAhorcado();
 juegoAhorcado.ElegirPalabra();
 Console.WriteLine("Palabra oculta: " + juegoAhorcado.ObtenerPalabraOculta());
 Console.WriteLine("Tienes " + juegoAhorcado.FallosPermitidos() + " intentos para adivinar la palabra.");
-int fallosPermitidos = juegoAhorcado.FallosPermitidos();
-
+var fallosPermitidos = juegoAhorcado.FallosPermitidos();
 while (juegoAhorcado.ObtenerFallos() < fallosPermitidos && !juegoAhorcado.JuegoTerminado())
 {
-    Console.Write("Introduce una letra: ");
-    char letra = Console.ReadKey().KeyChar;
-    Console.WriteLine();
+   Console.Write("Introduce una letra: ");
+   char letra = Console.ReadKey().KeyChar;
+   Console.WriteLine();
 
-    if(juegoAhorcado.AdivinarLetra(letra))
-    {
-        if(juegoAhorcado.JuegoTerminado())
-        {
-            Console.WriteLine("¡Felicidades! Has adivinado la palabra: " + juegoAhorcado.ObtenerPalabraOculta());
-            return; // Termina el juego si se adivina la palabra
-        }
+   if (!juegoAhorcado.AdivinarLetra(letra))
+   {
+      Console.WriteLine($"Fallaste! Te quedan {fallosPermitidos - juegoAhorcado.ObtenerFallos()} intentos.");
+      Console.WriteLine("La palabra oculta es: " + juegoAhorcado.ObtenerPalabraOculta());
+      continue;
+   }
 
-        Console.WriteLine("¡Correcto! La palabra oculta ahora es: " + juegoAhorcado.ObtenerPalabraOculta());
-    }
-    else
-    {
-        Console.WriteLine($"Fallaste! Te quedan {fallosPermitidos - juegoAhorcado.ObtenerFallos()} intentos.");
-        Console.WriteLine("La palabra oculta es: " + juegoAhorcado.ObtenerPalabraOculta());
-    }
+   if (juegoAhorcado.JuegoTerminado())
+   {
+      Console.WriteLine("¡Felicidades! Has adivinado la palabra: " + juegoAhorcado.ObtenerPalabraOculta());
+      return; // Termina el juego si se adivina la palabra
+   }
+
+   Console.WriteLine("¡Correcto! La palabra oculta ahora es: " + juegoAhorcado.ObtenerPalabraOculta());
 }
