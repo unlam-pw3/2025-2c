@@ -12,7 +12,7 @@ public class JuegoAdivinarNumeroTest
         Assert.Equal(20, resultado);
     }
 
-    [Theory]
+    [Theory] // Para correr el mismo test varias veces con diferentes datos
     [InlineData(0, "¡Felicidades! Has adivinado el numero.")]
     [InlineData(3, "Muy caliente")]
     [InlineData(10, "Caliente")]
