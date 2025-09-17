@@ -1,0 +1,47 @@
+﻿@using CLASE4_POO_Entidades;
+@model List<Animal>
+
+@{
+    Layout = "_MyLayout";
+}
+
+<h2>Lista de Animales</h2>
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th>Patas</th>
+            <th>Sonido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var animal in Model)
+        {
+            <tr>
+                <td>@animal.GetType().Name</td>
+                <td>@animal.Nombre</td>
+                <td>@animal.ObtenerCantidadDePatas()</td>
+                <td>@animal.HacerSonido()</td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+
+@*listar animales con divs*@
+<div class="animal-list">
+    @foreach (var animal in Model)
+    {
+        @* <div class="animal-card">
+            <h3>@animal.GetType().Name: @animal.Nombre</h3>
+            <p><strong>Patas:</strong> @animal.ObtenerCantidadDePatas()</p>
+            <p><strong>Sonido:</strong> @animal.HacerSonido()</p>
+        </div> *@
+
+        @await Html.PartialAsync("_pvAnimal", animal)
+    }
+
+
+
+
