@@ -1,0 +1,28 @@
+﻿
+@{
+    //Layout = "~/Views/Shared/_LayoutPropio.cshtml";
+}
+
+<h1>Agregar nueva herramienta</h1>
+
+<form method="post">
+    <div>
+        <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="Nombre" name="Nombre" required />
+        </div>
+        <div class="mb-3">
+            <label for="Precio" class="form-label">Precio</label>
+            <input type="number" step="0.01" class="form-control" id="Precio" name="Precio" required />
+        </div>
+        <div class="mb-3">
+            <label for="CantidadEnStock" class="form-label">Cantidad en Stock</label>
+            <input type="number" class="form-control" id="CantidadEnStock" name="CantidadEnStock" required />
+        </div>
+        <div class="mb-3">
+            <label for="Imagen" class="form-label">Imagen</label>
+            <input type="text" class="form-control" id="Imagen" name="Imagen" />
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Herramienta</button>
+    </div>
+</form>
