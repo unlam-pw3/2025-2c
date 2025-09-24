@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Clase5.Modelo1erParcial.Entidades.Mision>
+@{
+    ViewData["Title"] = "Resultados de Misiones";
+}
+<h1>@ViewData["Title"]</h1>
+<h2>Listado de Misiones Registradas</h2>
+@{
+    if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-info">@TempData["Mensaje"]</div>
+    }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#IdMision</th>
+            <th>Superhéroe</th>
+            <th>Villanos Derrotados</th>
+            <th>Horas de Misión</th>
+            <th>Indice de Eficiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mision in Model)
+        {
+            <tr>
+                <td>@mision.IdMision</td>
+                <td>@mision.NombreSuperheroe</td>
+                <td>@mision.CantVillanosDerrotados</td>
+                <td>@mision.HorasMision</td>
+                @* @mision.IndiceEficiencia con 2 decimales*@
+                <td>@mision.IndiceEficiencia.ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
