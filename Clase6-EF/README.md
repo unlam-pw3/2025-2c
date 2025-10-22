@@ -37,3 +37,5 @@ El proyecto incluye pruebas unitarias para asegurar el correcto funcionamiento d
 
 ¡Buena suerte con la nueva tarea!
 
+
+Scaffold-DbContext "Server=.;Database=PW3-2025-2c-BusquedaTesoro;Trusted_Connection=True;TrustServerCertificate=True"  Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entidades
