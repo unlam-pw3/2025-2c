@@ -8,12 +8,12 @@ Hicimos ejemplos Alta, Baja, Modificacion y Listado de la entidad "Tesoro" usand
 ### Modelo de datos
 
 *Tesoro*
-[IdTesoro] [int] IDENTITY(1,1) NOT NULL,
-Nombre NVARCHAR(255),
-ImagenUrl NVARCHAR(1000),
-Latitud DECIMAL (9,6) NULL,
-Longitud DECIMAL (9,6) NULL,
-Valor INT NULL;
+- [IdTesoro] [int] IDENTITY(1,1) NOT NULL,
+- Nombre NVARCHAR(255),
+- ImagenUrl NVARCHAR(1000),
+- Latitud DECIMAL (9,6) NULL,
+- Longitud DECIMAL (9,6) NULL,
+- Valor INT NULL;
 
 ### Pruebas Unitarias
 
@@ -26,9 +26,9 @@ El proyecto incluye pruebas unitarias para asegurar el correcto funcionamiento d
 **Hacer Alta, Baja, Modificacion y Listado de la entidad "Cazatesoro" y creamos tests usando database in memory**
 
 
-IdCazatesoro [int] IDENTITY(1,1) NOT NULL,
-Nick NVARCHAR(255),
-AvatarUrl NVARCHAR(1000) NULL
+- IdCazatesoro [int] IDENTITY(1,1)  NOT NULL,
+- Nick NVARCHAR(255),
+- AvatarUrl NVARCHAR(1000) NULL
 
 ## Intrucciones
 - Hacer un fork de este repositorio
