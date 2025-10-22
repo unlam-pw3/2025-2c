@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>Clase6.EF_BusquedaTesoro.Logica</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clase6.EF-BusquedaTesoro.Data\Clase6.EF-BusquedaTesoro.Data.csproj" />
+  </ItemGroup>
+
+</Project>
