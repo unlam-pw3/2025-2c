@@ -1,0 +1,6 @@
+@Clase6.EF_BusquedaTesoro.Web_HostAddress = http://localhost:5050
+
+GET {{Clase6.EF_BusquedaTesoro.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,28 @@
+﻿@using Clase6.EF_BusquedaTesoro.Data.Entidades
+@model List<Tesoro>
+
+<h1>Tesoros</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Valor</th>
+            <th>ImagenUrl</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tesoro in Model)
+        {
+            <tr>
+                <td>@tesoro.Nombre</td>
+                <td>@tesoro.Valor</td>
+                @* td imagenUrl *@
+                <td><img alt="@tesoro.Nombre" src="@tesoro.ImagenUrl" style="height:50px" /></td>
+                <td>
+                    <a asp-action="Eliminar" asp-route-id="@tesoro.IdTesoro">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
