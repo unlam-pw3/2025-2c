@@ -1,0 +1,31 @@
+﻿@using Clase6.EF_BusquedaTesoro.Data.Entidades
+@model Tesoro
+
+<h1>Agregar Tesoro</h1>
+<form asp-action="Agregar" method="post">
+    <input type="hidden" name="IdTesoro" value="@Model.IdTesoro" />
+
+    <div class="form-group">
+        <label>Nombre</label>
+        <input name="Nombre" class="form-control" value="@Model.Nombre" />
+    </div>
+    <div class="form-group">
+        <label>Valor</label>
+        <input name="Valor" class="form-control" value="@Model.Valor" />
+    </div>
+    <div class="form-group">
+        <label>ImagenUrl</label>
+        <input name="ImagenUrl" class="form-control" value="@Model.ImagenUrl" />
+    </div>
+    <div class="form-group">
+        <label>Latitud</label>
+        <input name="Latitud" class="form-control" value="@Model.Latitud" />
+    </div>
+    <div class="form-group">
+        <label>Longitud</label>
+        <input name="Longitud" class="form-control" value="@Model.Longitud" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Lista" class="btn btn-secondary">Volver</a>
+</form>

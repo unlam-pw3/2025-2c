@@ -7,6 +7,8 @@ public interface ITesorosLogica
     void AgregarTesoro(Tesoro tesoro);
     void EliminarTesoro(int idTesoro);
     List<Tesoro> ObtenerTesoros();
+
+    Tesoro ObtenerTesoroPorId(int idTesoro);
     void ActualizarTesoro(Tesoro tesoro);
 }
 public class TesorosLogica : ITesorosLogica
@@ -33,6 +35,11 @@ public class TesorosLogica : ITesorosLogica
     public List<Tesoro> ObtenerTesoros()
     {
         return _context.Tesoros.ToList();
+    }
+
+    public Tesoro ObtenerTesoroPorId(int idTesoro)
+    {
+        return _context.Tesoros.Find(idTesoro);
     }
     public void ActualizarTesoro(Tesoro tesoro)
     {
