@@ -1,0 +1,31 @@
+﻿@using Clase6.EF_BusquedaTesoro.Data.Entidades
+@model List<Cazatesoro>
+
+<a href="/cazatesoros/agregar" class="btn btn-primary mb-3">Agregar Cazatesoros</a>
+
+<h1>Cazatesoros</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Nickname</th>
+            <th>ImagenUrl</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cazatesoro in Model)
+        {
+            <tr>
+                <td><a href="/cazatesoros/editar/@cazatesoro.IdCazatesoro">@cazatesoro.Nick</a></td>
+                <td><img alt="@cazatesoro.Nick" src="@cazatesoro.AvatarUrl" style="height:50px" /></td>
+                <td>
+                    <a href="/cazatesoros/eliminar/@cazatesoro.IdCazatesoro">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*Ir a la seccion de tesoros*@
+<a href="/tesoros/lista" class="btn btn-secondary mt-3">Ver Tesoros</a>

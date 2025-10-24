@@ -1,0 +1,18 @@
+﻿@using Clase6.EF_BusquedaTesoro.Data.Entidades
+@model Cazatesoro
+
+<h1>Agregar Cazatesoro</h1>
+<form asp-action="Agregar" method="post">
+
+    <div class="form-group">
+        <label>Nickname</label>
+        <input name="Nick" class="form-control" value="@Model.Nick" />
+    </div>
+
+    <div class="form-group">
+        <label>Avatar Url</label>
+        <input name="AvatarUrl" class="form-control" value="@Model.AvatarUrl" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Lista" class="btn btn-secondary">Volver</a>
+</form>
