@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Clase1.Logica;
+﻿namespace Clase1.Logica;
 
 public class JuegoAhorcado
 {

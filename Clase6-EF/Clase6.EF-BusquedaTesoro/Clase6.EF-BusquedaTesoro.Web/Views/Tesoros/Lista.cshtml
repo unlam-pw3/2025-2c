@@ -1,0 +1,29 @@
+﻿@using Clase6.EF_BusquedaTesoro.Data.Entidades
+@model List<Tesoro>
+
+<a href="/tesoros/agregar" class="btn btn-primary mb-3">Agregar Tesoro</a>
+
+<h1>Tesoros</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Valor</th>
+            <th>ImagenUrl</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tesoro in Model)
+        {
+            <tr>
+                <td><a href="/tesoros/editar/@tesoro.IdTesoro">@tesoro.Nombre</a></td>
+                <td>@tesoro.Valor</td>
+                <td><img alt="@tesoro.Nombre" src="@tesoro.ImagenUrl" style="height:50px" /></td>
+                <td>
+                    <a href="/tesoros/eliminar/@tesoro.IdTesoro">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>

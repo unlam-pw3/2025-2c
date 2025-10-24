@@ -1,0 +1,39 @@
+﻿@using Clase3_Entidades
+@model List<Herramienta>
+
+@{
+}
+
+<h1>Lista de Herramientas</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var herramienta in Model)
+        {
+            <tr>
+                <td>@herramienta.Id</td>
+                <td>@herramienta.Nombre</td>
+                <td>@herramienta.Nombre</td>
+                <td>@herramienta.Precio.ToString("C")</td>
+                <td>@herramienta.CantidadEnStock</td>
+                <td><img src="@herramienta.Imagen" style="width:100px;height:100px:" /></td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@herramienta.Id" class="btn btn-primary btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@herramienta.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,7 @@
+﻿@model CLASE4_POO_Entidades.Animal
+
+<div class="animal-card">
+    <h3>@Model.GetType().Name: @Model.Nombre</h3>
+    <p><strong>Patas:</strong> @Model.ObtenerCantidadDePatas()</p>
+    <p><strong>Sonido:</strong> @Model.HacerSonido()</p>
+</div>
