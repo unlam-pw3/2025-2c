@@ -11,6 +11,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<Pw320252cBusquedaTesoroContext>();
 builder.Services.AddScoped<ITesorosLogica, TesorosLogica>();
+builder.Services.AddScoped<ICazatesorosLogica, CazatesorosLogica>();
 
 var app = builder.Build();
 
