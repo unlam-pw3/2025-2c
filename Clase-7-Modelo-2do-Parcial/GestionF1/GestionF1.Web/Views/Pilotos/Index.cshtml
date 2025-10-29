@@ -1,0 +1,26 @@
+﻿@using GestionF1.Data.Entidades
+@model List<Piloto>
+
+<h1>Pilotos de F1</h1>
+<a class="btn btn-primary" href="/pilotos/Agregar">Agregar Nuevo Piloto</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Escuderia</th>
+            <th>Operacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var piloto in Model)
+        {
+            <tr>
+                <td>@piloto.NombrePiloto</td>
+                <td>@piloto.IdEscuderiaNavigation.NombreEscuderia</td>
+                <td><a href="/pilotos/eliminar/@piloto.IdPiloto">Eliminar</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

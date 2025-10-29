@@ -1,7 +1,14 @@
+using GestionF1.Data.Entidades;
+using GestionF1.Logica;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<GestionF1Context>();
+builder.Services.AddScoped<IPilotoLogica, PilotoLogica>();
+builder.Services.AddScoped<IEscuderiaLogica, EscuderiaLogica>();
 
 var app = builder.Build();
 
@@ -22,7 +29,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Pilotos}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
