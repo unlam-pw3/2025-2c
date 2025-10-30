@@ -1,0 +1,12 @@
+﻿@model PilotoViewModel
+
+<h1>Agregar Nuevo Piloto</h1>
+
+<form method="post" action="/pilotos/agregarpiloto">
+    <div class="form-group">
+        <label for="NombrePiloto">Nombre del Piloto</label>
+        <input type="text" class="form-control" id="NombrePiloto" name="NombrePiloto" required />
+    </div>
+    @await Html.PartialAsync("_pvEscuderias")
+    <button type="submit" class="btn btn-primary">Agregar Piloto</button>
+</form>

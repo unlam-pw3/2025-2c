@@ -1,0 +1,19 @@
+﻿@using GestionF1.Data.Entidades
+
+<div class="form-group">
+    <label for="IdEscuderia">Escuderia</label>
+    <select class="form-control" id="IdEscuderia" name="IdEscuderia">
+        <option value="">Seleccione una escuderia</option>
+        @foreach (var escuderia in (List<Escuderium>)ViewBag.Escuderias)
+        {
+            @if (ViewBag.EscuderiaSeleccionada == escuderia.IdEscuderia)
+            {
+                <option selected value="@escuderia.IdEscuderia">@escuderia.NombreEscuderia</option>
+            }
+            else
+            {
+                <option value="@escuderia.IdEscuderia">@escuderia.NombreEscuderia</option>
+            }
+        }
+    </select>
+</div>
