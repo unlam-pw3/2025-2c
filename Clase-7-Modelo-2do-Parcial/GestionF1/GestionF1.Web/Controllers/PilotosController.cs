@@ -1,4 +1,6 @@
-﻿using GestionF1.Logica;
+﻿using GestionF1.Data.Entidades;
+using GestionF1.Logica;
+using GestionF1.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestionF1.Web.Controllers
@@ -6,9 +8,12 @@ namespace GestionF1.Web.Controllers
     public class PilotosController : Controller
     {
         private readonly IPilotoLogica _pilotoLogica;
-        public PilotosController(IPilotoLogica pilotoLogica)
+        private readonly IEscuderiaLogica _escuderiaLogica;
+
+        public PilotosController(IPilotoLogica pilotoLogica, IEscuderiaLogica escuderiaLogica)
         {
             _pilotoLogica = pilotoLogica;
+            _escuderiaLogica = escuderiaLogica;
         }
         public IActionResult Index()
         {
@@ -19,18 +24,52 @@ namespace GestionF1.Web.Controllers
         [HttpGet]
         public IActionResult AgregarPiloto()
         {
+            var escuderias = _escuderiaLogica.ObtenerEscuderias();
+            ViewBag.Escuderias = escuderias;
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult AgregarPiloto(Data.Entidades.Piloto piloto)
+        public IActionResult AgregarPiloto(PilotoViewModel piloto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _pilotoLogica.AgregarPiloto(piloto);
-                return RedirectToAction("Index");
+                CargarDropdownEscuderias();
+                return View(piloto);
             }
-            return View(piloto);
+
+            var escuderia = _escuderiaLogica.ObtenerEscuderiaPorId(piloto.IdEscuderia);
+            if (escuderia == null)
+            {
+                ModelState.AddModelError("IdEscuderia", "La escudería seleccionada no es válida.");
+                
+                CargarDropdownEscuderias();
+                return View(piloto);
+            }
+
+            var pilotoEntidad = new Piloto
+            {
+                NombrePiloto = piloto.NombrePiloto,
+                IdEscuderia = piloto.IdEscuderia,
+                Eliminado = false
+            };
+
+            _pilotoLogica.AgregarPiloto(pilotoEntidad);
+            return RedirectToAction("Index");
+        }
+
+        private void CargarDropdownEscuderias()
+        {
+            var escuderias = _escuderiaLogica.ObtenerEscuderias();
+            ViewBag.Escuderias = escuderias;
+        }
+
+        //Eliminar Piloto
+        public IActionResult EliminarPiloto(int id)
+        {
+            _pilotoLogica.EliminarPiloto(id);
+            return RedirectToAction("Index");
         }
 
     }

@@ -5,6 +5,7 @@ namespace GestionF1.Logica;
 public interface IEscuderiaLogica
 {
     List<Escuderium> ObtenerEscuderias();
+    Escuderium ObtenerEscuderiaPorId(int idEscuderia);
 }
 
 public class EscuderiaLogica : IEscuderiaLogica
@@ -19,6 +20,11 @@ public class EscuderiaLogica : IEscuderiaLogica
         return _context.Escuderia
             .OrderBy(o => o.NombreEscuderia)
             .ToList();
+    }
+    public Escuderium ObtenerEscuderiaPorId(int idEscuderia)
+    {
+        return _context.Escuderia
+            .Find(idEscuderia);
     }
 }
 
