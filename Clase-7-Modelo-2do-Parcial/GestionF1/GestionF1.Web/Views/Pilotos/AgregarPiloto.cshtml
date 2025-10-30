@@ -1,5 +1,4 @@
-﻿@using GestionF1.Data.Entidades
-@model Piloto
+﻿@model PilotoViewModel
 
 <h1>Agregar Nuevo Piloto</h1>
 
@@ -8,15 +7,6 @@
         <label for="NombrePiloto">Nombre del Piloto</label>
         <input type="text" class="form-control" id="NombrePiloto" name="NombrePiloto" required />
     </div>
-    <div class="form-group">
-        <label for="IdEscuderia">Escuderia</label>
-        <select class="form-control" id="IdEscuderia" name="IdEscuderia" required>
-            <option value="">Seleccione una escuderia</option>
-            @foreach (var escuderia in (List<Escuderium>) ViewBag.Escuderias)
-            {
-                <option value="@escuderia.IdEscuderia">@escuderia.NombreEscuderia</option>
-            }
-        </select>
-    </div>
+    @await Html.PartialAsync("_pvEscuderias")
     <button type="submit" class="btn btn-primary">Agregar Piloto</button>
 </form>

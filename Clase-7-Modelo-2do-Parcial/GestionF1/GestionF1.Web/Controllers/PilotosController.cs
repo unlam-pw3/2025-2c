@@ -15,9 +15,20 @@ namespace GestionF1.Web.Controllers
             _pilotoLogica = pilotoLogica;
             _escuderiaLogica = escuderiaLogica;
         }
-        public IActionResult Index()
+
+        [HttpGet]
+        public IActionResult Index(int? IdEscuderia)
         {
-            return View(_pilotoLogica.ObtnenerTodosLosPilotos());
+            CargarDropdownEscuderias();
+            if (IdEscuderia.HasValue)
+            {
+                ViewBag.EscuderiaSeleccionada = IdEscuderia.Value;
+                return View(_pilotoLogica.ObtenerPilotosPorEscuderia(IdEscuderia.Value));
+            }
+            else
+            {
+                return View(_pilotoLogica.ObtnenerTodosLosPilotos());
+            }
         }
 
         //Agregar Piloto

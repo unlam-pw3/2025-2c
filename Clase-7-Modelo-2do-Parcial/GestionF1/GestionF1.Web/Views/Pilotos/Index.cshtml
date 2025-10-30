@@ -4,6 +4,11 @@
 <h1>Pilotos de F1</h1>
 <a class="btn btn-primary" href="/pilotos/AgregarPiloto">Agregar Nuevo Piloto</a>
 
+<form method="get" action="/pilotos/index">
+    @await Html.PartialAsync("_pvEscuderias")
+    <input type="submit" class="btn btn-primary" value="Filtrar" />
+</form>
+
 <table class="table">
     <thead>
         <tr>
